@@ -1,0 +1,201 @@
+{% extends 'coursebasic.html' %}
+{% block title %}Palo Alto Networks (PCNSA){% endblock %}
+{% block body %}
+{% load static %}
+
+
+<main class="main mt-5">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Palo Alto Networks (PCNSA)</h1>
+                        <p class="mb-0">The Palo Alto Networks Certified Network Security Administrator (PCNSA) certification is designed for IT professionals who want to validate their ability to implement Palo Alto Networks' Next-Generation Firewalls (NGFWs) and configure basic security policies. 
+                            It’s ideal for network or security administrators managing Palo Alto Networks products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service-box">
+                        <h4>Course List</h4>
+                        <div class="services-list">
+                            <a href="/ccna/"><i class="bi bi-arrow-right-circle"></i><span>CCNA</span></a>
+                            <a href="/network/"><i class="bi bi-arrow-right-circle"></i><span>Network+ (N+)</span></a>
+                            <a href="/soc/"><i class="bi bi-arrow-right-circle"></i><span>SOC Course</span></a>
+                            <a href="/devops/"><i class="bi bi-arrow-right-circle"></i><span>DevOps</span></a>
+                            <a href="/checkpoint/"><i class="bi bi-arrow-right-circle"></i><span>Checkpoint
+                                    Course</span></a>
+                            <a href="/ceh/"><i class="bi bi-arrow-right-circle"></i><span>Certified Ethical
+                                    Hacker</span></a>
+                            <a href="/pcnsa/"><i class="bi bi-arrow-right-circle"></i><span>Palo Alto Networks</span></a>
+                        </div>
+                    </div><!-- End course List -->
+
+                    <div class="service-box">
+                        <h4>Download Syllabus</h4>
+                        <div class="download-catalog">
+                            <a href="{% static 'syllabus/16344.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+                        </div>
+                    </div><!-- End course List -->
+                    <div id="contact" class="service-box">
+                        <div class="col-12 ">
+                            <div class="contactdiv text-center">
+                                <h2 class="text-uppercase fw-bold">Contact Us</h2>
+                                <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+                            </div>
+                            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data"
+                                class="php-email-form">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+
+                                <div class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+
+                                {% endfor %}
+                                {% endif %}
+                                <div class="row gy-4">
+
+                                    <div class="col-12">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                            required="">
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                            required="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <input type="tel" class="form-control" name="phone" placeholder="9876543210"
+                                            pattern="[0-9]{10}" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select " name="Course" id="inputGroupSelect02">
+                                            <option selected>Courses</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="CCNA">CCNA</option>
+                                            <option value="Checkpoint">Checkpoint</option>
+                                            <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                                            <option value="SOC">SOC</option>
+                                            <option value="Network">Network</option>
+                                            <option value="PCNSA">PCNSA</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="3" placeholder="Message"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div><!-- End Contact Form -->
+
+                    <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                        <i class="bi bi-headset help-icon"></i>
+                        <h4>Have a Question?</h4>
+                        <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                                5589 55488 55</span></p>
+                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                                href="mailto:contact@example.com">contact@example.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                    <h1 class="h1">Overview of PCNSA</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Purpose:</span>
+                        </li>
+                        <p>Demonstrates proficiency in deploying and managing Palo Alto Networks NGFWs to protect networks from cyber threats.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Target Audience:</span>
+                        </li>
+                        <p>Entry-level to intermediate professionals in networking and cybersecurity.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Focus:</span></li>
+                        <p>Basic knowledge of firewall configurations, security rules, and network security protocols using Palo Alto's PAN-OS.</p>
+                    </ul>
+                    <img src="{% static 'assets/img/course/pcnsa.png' %}" alt="" class="img-fluid services-img">
+                    <h1>Benefits of Doing a Palo Alto Networks (PCNSA) Course</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Enhanced Career Opportunities:</span>
+                        </li>
+                        <p>Companies are increasingly adopting Palo Alto Networks' next-gen firewalls. Earning certification in 
+                            Palo Alto opens up a wide range of job opportunities in network security, firewall management, and cybersecurity.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Improved Cybersecurity Skills:</span>
+                        </li>
+                        <p>You gain practical skills in protecting networks from sophisticated threats,
+                             including the configuration of next-gen firewalls, intrusion detection/prevention systems (IDS/IPS), and VPNs.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Recognition in the Industry:</span></li>
+                        <p>Palo Alto certifications like PCNSA (Palo Alto Networks Certified Network Security Administrator) and PCNSE (Palo Alto Networks Certified Network Security Engineer) are well-recognized in the 
+                            cybersecurity industry. They validate your ability to manage, configure, and troubleshoot Palo Alto products.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Hands-On Experience:</span></li>
+                        <p>The courses offer extensive hands-on labs, 
+                            allowing you to learn by doing. This real-world experience prepares you for on-the-job scenarios.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>High Salary Potential:</span></li>
+                        <p>Professionals with Palo Alto certifications are often rewarded with higher salaries compared to those without. 
+                            The average salary for a PCNSE-certified engineer can range significantly, depending on location and experience.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Better Network Performance Management:</span></li>
+                        <p>You will 
+                            learn how to optimize network performance while ensuring security, balancing the demands of throughput, a
+                            nd threat prevention.</p>
+                    </ul>
+                    <h1>Prerequisites for Palo Alto Networks Course</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Basic Networking Knowledge:</span></li>
+                        <p>
+                            Understanding of OSI model, IP addressing (IPv4 and IPv6), subnets, and routing protocols like RIP, OSPF, and BGP.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Firewall Basics:</span></li>
+                        <p>
+                            Prior experience with firewalls (concepts like NAT, ACL, and VPN) is helpful.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Operating System Experience:</span></li>
+                        <p>Familiarity with Windows and Linux environments for firewall configuration and management.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Security Concepts:</span></li>
+                        <p>A foundational understanding of cybersecurity concepts, including threat types (malware, phishing, etc.), encryption, and VPN technologies.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">No Formal Certification Requirement:</span></li>
+                        <p>You don’t need to have previous certifications like CCNA or CompTIA Network+, but they are beneficial in understanding the underlying networking concepts.</p>
+                    </ul>
+                    <p>By Palo Alto course, you'll be well-prepared for a successful career in network security and firewall management.</p>
+                    <h1>Palo Alto Networks (PCNSA) Course Syllabus with Time Breakdown in Hours
+                    </h1>
+                    <div class="downloadbox">
+                        <a href="{% static 'syllabus/16344.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Service Details Section -->
+
+</main>
+
+
+
+{% endblock %}

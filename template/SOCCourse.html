@@ -1,0 +1,207 @@
+{% extends 'coursebasic.html' %}
+{% block title %}SOC Course{% endblock %}
+{% block body %}
+{% load static %}
+
+
+<main class="main mt-5">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Security Operations Center (SOC)</h1>
+                        <p class="mb-0">A Security Operations Center (SOC) is a centralized unit within an organization that monitors, detects, and responds to cybersecurity threats and incidents. It acts as the first 
+                            line of defense against cyberattacks and plays a critical role in an organization's cybersecurity framework.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service-box">
+                        <h4>Course List</h4>
+                        <div class="services-list">
+                            <a href="/ccna/"><i class="bi bi-arrow-right-circle"></i><span>CCNA</span></a>
+                            <a href="/network/"><i class="bi bi-arrow-right-circle"></i><span>Network+ (N+)</span></a>
+                            <a href="/soc/"><i class="bi bi-arrow-right-circle"></i><span>SOC Course</span></a>
+                            <a href="/devops/"><i class="bi bi-arrow-right-circle"></i><span>DevOps</span></a>
+                            <a href="/checkpoint/"><i class="bi bi-arrow-right-circle"></i><span>Checkpoint
+                                    Course</span></a>
+                            <a href="/ceh/"><i class="bi bi-arrow-right-circle"></i><span>Certified Ethical
+                                    Hacker</span></a>
+                            <a href="/pcnsa/"><i class="bi bi-arrow-right-circle"></i><span>Palo Alto Networks</span></a>
+                        </div>
+                    </div><!-- End course List -->
+
+                    <div class="service-box">
+                        <h4>Download Syllabus</h4>
+                        <div class="download-catalog">
+                            <a href="{% static 'syllabus/1833.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+                        </div>
+                    </div><!-- End course List -->
+                    <div id="contact" class="service-box">
+                        <div class="col-12 ">
+                            <div class="contactdiv text-center">
+                                <h2 class="text-uppercase fw-bold">Contact Us</h2>
+                                <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+                            </div>
+                            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data"
+                                class="php-email-form">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+
+                                <div class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+
+                                {% endfor %}
+                                {% endif %}
+                                <div class="row gy-4">
+
+                                    <div class="col-12">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                            required="">
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                            required="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <input type="tel" class="form-control" name="phone" placeholder="9876543210"
+                                            pattern="[0-9]{10}" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select " name="Course" id="inputGroupSelect02">
+                                            <option selected>Courses</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="CCNA">CCNA</option>
+                                            <option value="Checkpoint">Checkpoint</option>
+                                            <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                                            <option value="SOC">SOC</option>
+                                            <option value="Network">Network</option>
+                                            <option value="PCNSA">PCNSA</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="3" placeholder="Message"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div><!-- End Contact Form -->
+
+                    <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                        <i class="bi bi-headset help-icon"></i>
+                        <h4>Have a Question?</h4>
+                        <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                                5589 55488 55</span></p>
+                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                                href="mailto:contact@example.com">contact@example.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                    <h1 class="h1">What is SOC?</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Purpose:</span>
+                        </li>
+                        <p>To protect an organization’s IT infrastructure, data, and users from cyber threats.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Functionality: </span>
+                        </li>
+                        <p>Continuous monitoring, threat detection, incident response, and threat intelligence</p>
+                    </ul>
+                    <img src="{% static 'assets/img/course/soc.jpg' %}" alt="" class="img-fluid services-img">
+                    <h1>Benefits of Doing a SOC Course (Splunk and IBM QRadar)</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Comprehensive Threat Detection and Monitoring:</span>
+                        </li>
+                        <p>You will learn how to effectively monitor network activity, detect potential threats, and identify vulnerabilities using SIEM tools like Microsoft Azure Sentinel and IBM QRadar. 
+                            These platforms help aggregate and correlate data from various sources to provide visibility into security events in real-time.</p>
+                            <p>Sentinel helps organizations detect, investigate, and respond to security threats across their entire enterprise., while QRadar excels in threat detection through advanced correlation rules.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Incident Response and Forensics:</span>
+                        </li>
+                        <p>By mastering these tools, you gain the ability to track security incidents, investigate root causes, 
+                            and take corrective measures, helping organizations respond quickly and efficiently to cyber threats.</p>
+                            <p>Sentinel and QRadar both support forensic analysis and incident response workflows, which are crucial for managing security incidents end-to-end.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Hands-on Experience in SIEM Operations:</span></li>
+                        <p>Through practical labs, you will experience real-world scenarios in Security Operations Centers (SOC), making you ready for operational roles in cybersecurity.</p>
+                            <p>You will get hands-on with both rule-based and behavior-based threat detection, enhancing your ability to create custom rules, dashboards, and reports.</p>
+                            <li><i class="bi bi-check-circle"></i> <span>Compliance and Reporting:</span></li>
+                            <p>Azure Sentinel and IBM QRadar are commonly used for meeting compliance requirements (e.g., PCI-DSS, GDPR, HIPAA). 
+                                You will learn to generate reports and configure the platforms to align with regulatory standards, which is critical for businesses.</p>
+                                <li><i class="bi bi-check-circle"></i> <span>Career Advancement:</span></li>
+                                <p>Gaining expertise in Azure Sentinel and IBM QRadar opens doors to roles like SOC Analyst, SIEM Engineer, Threat Hunter, and Incident Responder.</p>
+                                <p>Certifications in these tools can lead to higher salaries and job prospects due to the rising demand for skilled SOC professionals.</p>
+                                <li><i class="bi bi-check-circle"></i> <span>Automation and Efficiency:</span></li>
+                                <p>Sentinel and QRadar both offer automation capabilities (e.g., playbooks and SOAR integration), enabling you to automate routine tasks, such as alert generation and response actions. This reduces manual effort and speeds up threat resolution.</p>
+                        
+                            </ul>
+                    <h1>Prerequisites for SOC (Microsoft Azure Sentinel and IBM QRadar) Course:</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Basic Networking Knowledge:</span></li>
+                        <p>
+                            Understanding of TCP/IP, subnetting, ports, and protocols. Knowledge of OSI 
+                            layers and how network traffic works is essential for configuring and interpreting logs in SIEM systems.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Basic Cybersecurity Concepts:</span></li>
+                        <p>
+                            Familiarity with cybersecurity terms like firewalls, IDS/IPS, malware, DDoS, threat intelligence, and incident response.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Operating Systems Knowledge:</span></li>
+                        <p>Understanding of both Windows and Linux operating systems. Many logs and events analyzed in SOC e
+                            nvironments come from these OSes, so knowing their structure and behavior is important.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Log Management Concepts:</span></li>
+                        <p>Basic understanding of how logs are generated, collected, and stored. Familiarity with log formats such 
+                            as syslog, Windows Event Logs, and JSON will help you effectively ingest data into SIEM platforms.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Scripting and Automation (optional):</span></li>
+                        <p>Some knowledge of scripting languages such as Python or Bash may be helpful in automating
+                             tasks within these SIEM tools or integrating them with other platforms.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">SIEM Basics:</span></li>
+                        <p>If you're new to SIEM tools, having a general understanding of how SIEMs work can be beneficial. 
+                            This includes the flow of events, event correlation, alerting, and reporting.</p>
+                    </ul>
+                    <h1>
+                        SOC (Microsoft Azure Sentinel and IBM QRadar) Course Syllabus with Time Breakdown in Hours
+                    </h1>
+                    <div class="downloadbox">
+                        <a href="{% static 'syllabus/1833.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Service Details Section -->
+
+</main>
+
+
+
+{% endblock %}

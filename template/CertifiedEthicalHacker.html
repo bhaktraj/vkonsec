@@ -1,0 +1,201 @@
+{% extends 'coursebasic.html' %}
+{% block title %}Certified Ethical Hacker (CEH){% endblock %}
+{% block body %}
+{% load static %}
+
+
+<main class="main mt-5">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Certified Ethical Hacker</h1>
+                        <p class="mb-0">The Certified Ethical Hacker (CEH) is a globally recognized certification offered by the International Council of E-Commerce Consultants (EC-Council). 
+                            It equips IT professionals with the knowledge and skills to identify vulnerabilities and weaknesses in computer systems, networks, and software, using the same techniques as malicious hackers—legally and ethically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service-box">
+                        <h4>Course List</h4>
+                        <div class="services-list">
+                            <a href="/ccna/"><i class="bi bi-arrow-right-circle"></i><span>CCNA</span></a>
+                            <a href="/network/"><i class="bi bi-arrow-right-circle"></i><span>Network+ (N+)</span></a>
+                            <a href="/soc/"><i class="bi bi-arrow-right-circle"></i><span>SOC Course</span></a>
+                            <a href="/devops/"><i class="bi bi-arrow-right-circle"></i><span>DevOps</span></a>
+                            <a href="/checkpoint/"><i class="bi bi-arrow-right-circle"></i><span>Checkpoint
+                                    Course</span></a>
+                            <a href="/ceh/"><i class="bi bi-arrow-right-circle"></i><span>Certified Ethical
+                                    Hacker</span></a>
+                            <a href="/pcnsa/"><i class="bi bi-arrow-right-circle"></i><span>Palo Alto Networks</span></a>
+                        </div>
+                    </div><!-- End course List -->
+
+                    <div class="service-box">
+                        <h4>Download Syllabus</h4>
+                        <div class="download-catalog">
+                            <a href="{% static 'syllabus/332275.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+                        </div>
+                    </div><!-- End course List -->
+                    <div id="contact" class="service-box">
+                        <div class="col-12 ">
+                            <div class="contactdiv text-center">
+                                <h2 class="text-uppercase fw-bold">Contact Us</h2>
+                                <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+                            </div>
+                            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data"
+                                class="php-email-form">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+
+                                <div class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+
+                                {% endfor %}
+                                {% endif %}
+                                <div class="row gy-4">
+
+                                    <div class="col-12">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                            required="">
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                            required="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <input type="tel" class="form-control" name="phone" placeholder="9876543210"
+                                            pattern="[0-9]{10}" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select " name="Course" id="inputGroupSelect02">
+                                            <option selected>Courses</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="CCNA">CCNA</option>
+                                            <option value="Checkpoint">Checkpoint</option>
+                                            <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                                            <option value="SOC">SOC</option>
+                                            <option value="Network">Network</option>
+                                            <option value="PCNSA">PCNSA</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="3" placeholder="Message"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div><!-- End Contact Form -->
+
+                    <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                        <i class="bi bi-headset help-icon"></i>
+                        <h4>Have a Question?</h4>
+                        <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                                5589 55488 55</span></p>
+                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                                href="mailto:contact@example.com">contact@example.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{% static 'assets/img/course/Certified_EthicalHacker.jpg' %}" alt="" class="img-fluid services-img">
+                    <h1>Benefits of Doing a CEH (Certified Ethical Hacker) Course</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Comprehensive Understanding of Cybersecurity:</span>
+                        </li>
+                        <p>The CEH course covers various hacking tools, techniques, and methodologies used by both ethical hackers and cybercriminals. 
+                            It provides in-depth knowledge on how to identify and fix vulnerabilities in an organization's network.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Global Recognition:</span>
+                        </li>
+                        <p>CEH is one of the most widely recognized certifications in the cybersecurity field. 
+                            It is recognized by top companies worldwide and is a strong addition to your resume when pursuing jobs in information security.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Hands-On Practice:</span></li>
+                        <p>The course emphasizes practical experience by simulating real-world cyberattacks in controlled lab environments. 
+                            This prepares candidates to face actual cybersecurity threats and vulnerabilities.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Opens Up Various Career Paths:</span></li>
+                        <p>CEH certification can lead to positions such as Ethical Hacker, Penetration Tester, Security Analyst, 
+                            and IT Auditor, among others.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Increased Salary Potential:</span></li>
+                        <p>Ethical hackers are in demand, and certified professionals are often offered higher salaries due to their specialized skills. 
+                            The certification can help boost salary expectations in the cybersecurity field.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Stay Updated with the Latest Threats:</span></li>
+                        <p>The CEH curriculum is regularly updated to ensure that certified professionals 
+                            are aware of the latest cyber threats and the latest penetration testing techniques.</p>
+                    </ul>
+                    <h1>Prerequisites for CEH Course</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Basic Knowledge of Networking:</span></li>
+                        <p>
+                            Understanding fundamental concepts such as IP addressing, subnetting, 
+                            OSI Model, and basic networking protocols is crucial before pursuing CEH.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Understanding of Operating Systems:</span></li>
+                        <p>
+                            Familiarity with Windows and Linux environments is essential, as most ethical hacking practices are executed in these systems.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Experience in IT:</span></li>
+                        <p>While it is not mandatory, having at least 2 years of work experience in the information security domain is recommended. It can help you grasp the CEH material more easily.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Knowledge of Security Concepts:</span></li>
+                        <p>Basic knowledge of security concepts such as firewalls, IDS/IPS, encryption, and authentication mechanisms 
+                            can be beneficial.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Desire to Understand Hacking Techniques:</span></li>
+                        <p>A strong interest in learning about how cyberattacks are carried out and mitigated is necessary to succeed in CEH.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Completion of EC-Council's CEH Training Program (Optional):</span></li>
+                        <p>If you don't have the required work experience, 
+                            you can attend an official CEH training program provided by EC-Council, which qualifies you to sit for the CEH exam.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">No Mandatory Prerequisite (Self-Study):</span></li>
+                        <p>For individuals opting for self-study, there are no strict prerequisites. However, familiarity with networking and security basics is highly recommended to understand the course content.</p>
+                    </ul>
+                    <p>
+                        CEH certification is a vital step toward building a career in cybersecurity, providing both theoretical knowledge and hands-on skills to combat evolving cyber threats.
+                    </p>
+                    <h1>Certified Ethical Hacker (CEH)</h1>
+                    <p>course could be structured, outlining day-to-day content with suggested time allocations for each topic. The course typically lasts about 5 days, depending on the delivery pace and depth of each topic.</p>
+                    <h1>
+                        Certified Ethical Hacker Course Syllabus with Time Breakdown in Hours
+                    </h1>
+                    <div class="downloadbox">
+                        <a href="{% static 'syllabus/332275.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Service Details Section -->
+
+</main>
+
+
+
+{% endblock %}

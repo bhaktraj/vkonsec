@@ -1,0 +1,245 @@
+{% extends 'coursebasic.html' %}
+{% block title %}Mars{% endblock %}
+{% block body %}
+{% load static %}
+
+
+<main class="main mt-5">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Monitoring Alerting Remediation & Solutions</h1>
+                        <p class="mb-0">Monitoring involves tracking system performance and health to detect issues
+                            early, while alerting notifies stakeholders of critical events. Remediation addresses
+                            identified problems through automated or manual actions. Solutions encompass tools,
+                            processes, and strategies to optimize these functions, ensuring system reliability,
+                            minimizing downtime, and enabling continuous improvement for robust IT operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service-box">
+                        <h4>Course List</h4>
+                        <div class="services-list">
+                            <a href="/ccna/"><i class="bi bi-arrow-right-circle"></i><span>CCNA</span></a>
+                            <a href="/network/"><i class="bi bi-arrow-right-circle"></i><span>Network+ (N+)</span></a>
+                            <a href="/soc/"><i class="bi bi-arrow-right-circle"></i><span>SOC Course</span></a>
+                            <a href="/devops/"><i class="bi bi-arrow-right-circle"></i><span>DevOps</span></a>
+                            <a href="/checkpoint/"><i class="bi bi-arrow-right-circle"></i><span>Checkpoint
+                                    Course</span></a>
+                            <a href="/ceh/"><i class="bi bi-arrow-right-circle"></i><span>Certified Ethical
+                                    Hacker</span></a>
+                            <a href="/pcnsa/"><i class="bi bi-arrow-right-circle"></i><span>Palo Alto
+                                    Networks</span></a>
+                        </div>
+                    </div><!-- End course List -->
+
+                    <div class="service-box">
+                        
+                    </div><!-- End course List -->
+                    <div id="contact" class="service-box">
+                        <div class="col-12 ">
+                            <div class="contactdiv text-center">
+                                <h2 class="text-uppercase fw-bold">Contact Us</h2>
+                                <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+                            </div>
+                            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data"
+                                class="php-email-form">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+
+                                <div class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+
+                                {% endfor %}
+                                {% endif %}
+                                <div class="row gy-4">
+
+                                    <div class="col-12">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                            required="">
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                            required="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <input type="tel" class="form-control" name="phone" placeholder="9876543210"
+                                            pattern="[0-9]{10}" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select " name="Course" id="inputGroupSelect02">
+                                            <option selected>Courses</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="CCNA">CCNA</option>
+                                            <option value="Checkpoint">Checkpoint</option>
+                                            <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                                            <option value="SOC">SOC</option>
+                                            <option value="Network">Network</option>
+                                            <option value="PCNSA">PCNSA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="3" placeholder="Message"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div><!-- End Contact Form -->
+
+                    <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                        <i class="bi bi-headset help-icon"></i>
+                        <h4>Have a Question?</h4>
+                        <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                                5589 55488 55</span></p>
+                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                                href="mailto:contact@example.com">contact@example.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+                    <img src="{% static 'assets/img/course/mars.png' %}" alt="" class="img-fluid services-img">
+                    <h1>Endpoints Real-Time Monitoring…!</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Server Hardware Monitoring</span>
+                        </li>
+                        <p>Server hardware monitoring tracks the performance of physical, virtual, and cloud servers. It
+                            monitors CPU, memory, disk, and network usage, sends alerts for issues, and supports remote
+                            monitoring. This helps prevent downtime, optimize performance, and ensure scalability by
+                            adjusting resources as infrastructure grows to meet increasing demand.</p>
+
+                        <li><i class="bi bi-check-circle"></i> <span>Operating System Monitoring</span>
+                        </li>
+                        <p>Operating system monitoring for Windows and Linux ensures optimal server performance by
+                            tracking metrics like disk health, CPU usage, and memory. It includes event log and service
+                            monitoring to prevent failures, simplify management, and improve troubleshooting.
+                            This proactive approach helps resolve issues before they cause downtime, ensuring system
+                            reliability.</p>
+
+                        <li><i class="bi bi-check-circle"></i> <span>Application Server Monitoring</span></li>
+                        <p>Application Server Monitoring tracks performance of servers like IBM WebSphere and Apache
+                            with real-time monitoring, alerts, and auto-scaling. Application Performance Monitoring
+                            (APM) ensures smooth application operation by monitoring metrics like response times and
+                            error rates. Language-specific monitoring for Java, .NET,
+                            and Node.js helps optimize performance, troubleshoot issues, and improve user experience.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span>Database Monitoring</span></li>
+                        <p>Database monitoring tracks the performance of systems like MySQL, PostgreSQL, Oracle, and SQL
+                            Server. It monitors query performance, resource usage, and availability. Benefits include
+                            optimized query performance, reduced downtime, and ensuring database security and compliance
+                            by detecting abnormal behavior and tracking access for better management and performance.
+                        </p>
+
+                        <li><i class="bi bi-check-circle"></i> <span>Network Monitoring</span></li>
+                        <p>Network monitoring tracks the performance and security of network components like routers,
+                            switches, and servers. Network Performance Monitoring (NPM) ensures optimal data
+                            transmission, low latency, and bandwidth utilization. It helps identify issues, optimize
+                            network resources, prevent congestion, and manage costs by detecting underperforming areas
+                            before they impact users.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Network Traffic Monitoring</span></li>
+                        <p>Network Traffic Monitoring analyzes data flow to optimize performance and identify issues
+                            like bottlenecks or security threats. It tracks traffic patterns, prioritizes critical
+                            applications, and measures bandwidth usage. Benefits include improved performance, enhanced
+                            security by detecting threats, and capacity planning to forecast future network needs and
+                            ensure scalability.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Network Device Vendors</span></li>
+                        <p>Network device vendors supply essential hardware like routers, switches, and firewalls.
+                            Popular vendors include Cisco, Juniper Networks, Arista, Huawei, HPE, Fortinet, and NETGEAR.
+                            Choosing the right vendor ensures reliability, performance, scalability, strong support
+                            services, and advanced security features, protecting networks and enabling growth.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Importance of Network Monitoring</span></li>
+                        <p>Network monitoring ensures proactive issue resolution, optimized performance, and enhanced
+                            security by identifying bottlenecks, tracking traffic, and preventing threats. It aids in
+                            cost management by optimizing resource allocation and simplifies network management with
+                            automated tools. Overall,
+                            it maintains network health and ensures smooth, secure operations across environments.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Digital Experience Monitoring (DEM)</span></li>
+                        <p>Digital Experience Monitoring ensures optimal online performance through website, synthetic,
+                            uptime, webpage speed, DNS, and REST API monitoring. It provides proactive issue resolution,
+                            enhances user experience, offers global performance insights, and builds transparency with
+                            hosted status pages, ensuring reliable services and improved user satisfaction across
+                            platforms.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Cloud Monitoring</span></li>
+                        <p>Cloud monitoring tracks the health, performance, and security of cloud services. It monitors
+                            resource usage, application performance, costs, and security compliance. Benefits include
+                            cost optimization, performance assurance, real-time alerts for issues, and scalability,
+                            ensuring cloud environments run efficiently and securely, adapting to dynamic resource
+                            demands.
+                        <ul>
+                            <li><i class="bi bi-arrow-right"></i> <span>AWS Monitoring (Amazon Web Services)</span></li>
+                            <li><i class="bi bi-arrow-right"></i> <span>Azure Monitoring</span></li>
+                            <li><i class="bi bi-arrow-right"></i> <span>GCP Monitoring (Google Cloud Platform)</span>
+                            </li>
+                        </ul>
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span>DevOps Monitoring</span></li>
+                        <p>DevOps monitoring for Docker, Kubernetes, Jenkins, Artifactory, BitBucket, and Nginx ensures
+                            optimal performance. Tools like MARS and Datadog track resource utilization, container
+                            health, CI/CD pipeline status, and web server metrics. Benefits
+                            include optimized resource use, faster development cycles, reliable scaling, and early issue
+                            detection for improved performance.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Kubernetes Monitoring</span></li>
+                        <p>Kubernetes monitoring ensures containerized applications perform well within clusters. It
+                            tracks container health, CPU, memory usage, and pod performance. Key benefits include
+                            scalable operations, better container health visibility, and streamlined management,
+                            allowing administrators to optimize performance, prevent downtime, and effectively manage
+                            Kubernetes clusters for efficient application deployment.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>VMware Monitoring</span></li>
+                        <p>VMware monitoring tracks the health and performance of virtual environments, ensuring optimal
+                            resource allocation across virtual machines and ESXi hosts. It offers comprehensive
+                            visibility and proactive issue resolution. Site24x7 plugins extend functionality,
+                            providing cloud and third-party application monitoring, seamless integration, and
+                            customizable alerts for a unified IT environment.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>VPN Monitoring</span></li>
+                        <p>VPN monitoring ensures secure, stable connections for remote users.
+                            It tracks connection health, traffic encryption, latency, throughput, and user
+                            authentication. Key benefits include enhanced security, improved user experience with low
+                            latency and high availability, and compliance monitoring to prevent unauthorized access and
+                            ensure secure data transmission.</p>
+                    </ul>
+                    
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Service Details Section -->
+
+</main>
+
+
+
+{% endblock %}

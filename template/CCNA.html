@@ -1,0 +1,178 @@
+{% extends 'coursebasic.html' %}
+{% block title %}CCNA{% endblock %}
+{% block body %}
+{% load static %}
+
+
+<main class="main mt-5">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Cisco Certified Network Associate (CCNA)</h1>
+                        <p class="mb-0">
+                            The Cisco Certified Network Associate (CCNA) is a popular certification offered by Cisco Systems, designed to validate an individual's skills and knowledge in networking fundamentals. It is considered a foundational certification in the field of IT networking,</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service-box">
+                        <h4>Course List</h4>
+                        <div class="services-list">
+                            <a href="/ccna/"><i class="bi bi-arrow-right-circle"></i><span>CCNA</span></a>
+                            <a href="/network/"><i class="bi bi-arrow-right-circle"></i><span>Network+ (N+)</span></a>
+                            <a href="/soc/"><i class="bi bi-arrow-right-circle"></i><span>SOC Course</span></a>
+                            <a href="/devops/"><i class="bi bi-arrow-right-circle"></i><span>DevOps</span></a>
+                            <a href="/checkpoint/"><i class="bi bi-arrow-right-circle"></i><span>Checkpoint
+                                    Course</span></a>
+                            <a href="/ceh/"><i class="bi bi-arrow-right-circle"></i><span>Certified Ethical
+                                    Hacker</span></a>
+                            <a href="/pcnsa/"><i class="bi bi-arrow-right-circle"></i><span>Palo Alto Networks</span></a>
+                        </div>
+                    </div><!-- End course List -->
+
+                    <div class="service-box">
+                        <h4>Download Syllabus</h4>
+                        <div class="download-catalog">
+                            <a href="{% static 'syllabus/368.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+                        </div>
+                    </div><!-- End course List -->
+                    <div id="contact" class="service-box">
+                        <div class="col-12 ">
+                            <div class="contactdiv text-center">
+                                <h2 class="text-uppercase fw-bold">Contact Us</h2>
+                                <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+                            </div>
+                            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data"
+                                class="php-email-form">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+
+                                <div class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+
+                                {% endfor %}
+                                {% endif %}
+                                <div class="row gy-4">
+
+                                    <div class="col-12">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                            required="">
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                            required="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <input type="tel" class="form-control" name="phone" placeholder="9876543210"
+                                            pattern="[0-9]{10}" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select " name="Course" id="inputGroupSelect02">
+                                            <option selected>Courses</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="CCNA">CCNA</option>
+                                            <option value="Checkpoint">Checkpoint</option>
+                                            <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                                            <option value="SOC">SOC</option>
+                                            <option value="Network">Network</option>
+                                            <option value="PCNSA">PCNSA</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="3" placeholder="Message"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div><!-- End Contact Form -->
+
+                    <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                        <i class="bi bi-headset help-icon"></i>
+                        <h4>Have a Question?</h4>
+                        <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                                5589 55488 55</span></p>
+                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                                href="mailto:contact@example.com">contact@example.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                    <img src="{% static 'assets/img/course/CCNA.png' %}" alt="" class="img-fluid services-img">
+                    <h1>Benefits of Doing CCNA 200-301 Course</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Comprehensive Networking Knowledge:</span>
+                        </li>
+                        <p>The CCNA 200-301 certification provides a strong foundation in networking concepts, which include IP addressing, routing, switching, security, automation, 
+                            and wireless networking. This is essential for IT professionals aiming to understand how networks operate.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Career Advancement:</span>
+                        </li>
+                        <p>Earning a CCNA certification can significantly improve job prospects. Many employers regard it as a baseline qualification for networking professionals.
+                             It can lead to job roles such as Network Engineer, Network Administrator, and IT Support Engineer.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Understanding of Modern Networking Trends:</span></li>
+                        <p>The CCNA 200-301 covers modern networking technologies, such as software-defined networking (SDN), automation, and the integration of cloud services. 
+                            This equips professionals with relevant skills for current and future networking needs.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Improved Troubleshooting Skills:</span></li>
+                        <p>The CCNA certification strengthens your ability to troubleshoot and solve network issues efficiently, which is a critical skill in any IT role..</p>
+                    </ul>
+                    <h1>Prerequisites for CCNA 200-301</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Basic Understanding of Computer Networks:</span></li>
+                        <p>
+                            You should have a fundamental knowledge of how computer networks work. 
+                            Familiarity with basic networking concepts such as IP addresses, routers, and switches will be beneficial.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Experience with Network Equipment:</span></li>
+                        <p>
+                            While there are no formal prerequisites, hands-on experience with networking devices such as routers and switches, and exposure to networking tools (like Cisco Packet Tracer) is highly recommended.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Knowledge of OSI and TCP/IP Models:</span></li>
+                        <p>It is important to have a basic understanding of the OSI and TCP/IP models, which will help when learning about network protocols, IP addressing, and data transmission.</p>
+                    </ul>
+                    <h1>
+                        CCNA Course Syllabus with Time Breakdown in Hours
+                    </h1>
+                    <div class="downloadbox">
+                        <a href="{% static 'syllabus/368.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Service Details Section -->
+
+</main>
+
+
+
+{% endblock %}

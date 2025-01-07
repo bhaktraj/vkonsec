@@ -1,0 +1,867 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+{% load static %}
+<main class="main">
+  <!-- Hero Section -->
+  <section id="hero" class="hero section">
+
+    <div class="container">
+      <!-- Slider Wrapper -->
+      <div class="css-slider-wrapper">
+        <input type="radio" name="slider" class="slidel-radio1" checked id="slider_1">
+        <input type="radio" name="slider" class="slidel-radio2" id="slider_2">
+        <input type="radio" name="slider" class="slidel-radio3" id="slider_3">
+        <input type="radio" name="slider" class="slidel-radio4" id="slider_4">
+
+        <!-- Slider Pagination -->
+        <div class="slider-pagination">
+          <label for="slider_1" class="page1"></label>
+          <label for="slider_2" class="page2"></label>
+          <label for="slider_3" class="page3"></label>
+          <label for="slider_4" class="page4"></label>
+        </div>
+
+        <!-- Slider #1 -->
+        <div class="slider slide-1">
+          <img src="{% static 'assets/img/model.png' %}" alt="">
+          <div class="slider-content">
+            <h4>Courses</h4>
+            <h2>Modern Training Solution</h2>
+            <button type="button" class="buy-now-btn" name="button">Get Started</button>
+          </div>
+          <div class="number-pagination">
+            <span>1</span>
+          </div>
+        </div>
+
+        <!-- Slider #2 -->
+        <div class="slider slide-2">
+          <img src="{% static 'assets/img/pngegg.png' %}" alt="">
+          <div class="slider-content">
+            <h4>Get Certification</h4>
+            <h2>cyber Expert</h2>
+            <button type="button" class="buy-now-btn" name="button">Get Started</button>
+          </div>
+          <div class="number-pagination">
+            <span>2</span>
+          </div>
+        </div>
+
+        <!-- Slider #3 -->
+        <div class="slider slide-3">
+          <img src="{% static 'assets/img/modelstand.png' %}" alt="">
+          <div class="slider-content">
+            <h4>Technologies</h4>
+            <h2>Working Profession </h2>
+            <button type="button" class="buy-now-btn" name="button">Get Started</button>
+          </div>
+          <div class="number-pagination">
+            <span>3</span>
+          </div>
+        </div>
+
+        <!-- Slider #4 -->
+        <div class="slider slide-4">
+          <img src="{% static 'assets/img/model.png' %}" alt="">
+          <div class="slider-content">
+            <h4>MARS</h4>
+            <h2> Monitoring Alerting Remediation & Solutions</h2>
+            <button type="button" class="buy-now-btn" name="button">Get Started</button>
+          </div>
+          <div class="number-pagination">
+            <span>4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section><!-- /Hero Section -->
+
+  <!-- About Section -->
+  <section id="about" class="about section">
+
+    <div class="container" data-aos="fade-up">
+      <div class="row gx-0">
+
+        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="content">
+            <h2>About Us</h2>
+            <h1 class="h4">Established in 2018, Vkonsec was founded with the mission to deliver world-class technology
+              solutions and cater to IT projects and data center management. Our vision is to empower
+              organizations and individuals with cutting-edge technology and practical expertise in the ever-evolving IT
+              landscape.</h1>
+            <h2>Who We Are</h2>
+            <p>
+              At Vkonsec, we are a team of seasoned IT professionals with extensive expertise in networking,
+              cybersecurity, and IT solutions. With a passion for empowering professionals
+              and organizations, we combine our hands-on experience with innovative solutions to meet modern IT
+              challenges.
+            </p>
+
+            <h2>Protect, secure, and educate — that’s our mission!</h2>
+
+            <!--
+            <div class="text-center text-lg-start">
+              <a href="#"
+                class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Read More</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="about vkonsec">
+        </div>
+
+      </div>
+      <div class="row gx-0">
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'assets/img/services.jpg' %}" class="img-fluid" alt="about vkonsec">
+        </div>
+
+        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="content">
+            <h2>Our Services</h2>
+            <h1 class="h4">Vkonsec offers a comprehensive range of services, focusing on both project management and
+              training programs.</h1>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Specialized Training Programs</span>
+              </li>
+              <p class="mb-1">We provide industry-relevant training to equip learners with the skills and certifications
+                necessary to
+                excel in the IT industry:</p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>CompTIA Network+ - CompTIA N+</span>
+                <li><i class="bi bi-check-circle"></i> <span>CompTIA Security+ - CompTIA S+</span>
+                <li><i class="bi bi-check-circle"></i> <span>CCNA: Cisco Certified Network Associate</span>
+                <li><i class="bi bi-check-circle"></i> <span>Checkpoint: Firewall Security Solutions</span>
+                <li><i class="bi bi-check-circle"></i> <span>Palo Alto: Advanced Network Security and Firewall
+                    Solutions</span>
+                <li><i class="bi bi-check-circle"></i> <span>SIEM: Security Information and Event Management
+                    Systems</span>
+                <li><i class="bi bi-check-circle"></i> <span>CEH: Certified Ethical Hacker</span>
+                <li><i class="bi bi-check-circle"></i> <span>DevOps: Integrating Software Development and IT
+                    Operations</span>
+                <li><i class="bi bi-check-circle"></i> <span>CISSP: Certified Information System Security
+                    Professional</span>
+              </ul>
+              <li class="mt-2"><i class="bi bi-check-circle"></i> <span class="fw-bold">Cybersecurity Consultancy &
+                  Implementation</span>
+              </li>
+              <p>As a startup focused solely on cybersecurity, Vkonsec offers end-to-end cybersecurity solutions that
+                are vendor-neutral, ensuring world-class protection for your organization, systems,
+                and data. Our consultancy services prioritize tailored solutions, free from technology biases or legacy
+                issues.</p>
+
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section><!-- /About Section -->
+
+
+
+  <!-- Values Section -->
+  <section id="values" class="values section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Our Values</h2>
+      <p>Protect, secure, and educate<br></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="card">
+            <img src="{% static 'assets/img/security.jpg' %}" class="img-fluid" alt="security first">
+            <h3>Security First:</h3>
+            <p>We prioritize the protection of your digital assets, delivering reliable and innovative security
+              solutions tailored to your business needs.</p>
+          </div>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="card">
+            <img src="{% static 'assets/img/values-2.png' %}" class="img-fluid" alt="Integrity & trust">
+            <h3>Integrity & Trust</h3>
+            <p>We believe in building strong relationships through honesty, transparency, and ethical practices,
+              ensuring trust in everything we do.</p>
+          </div>
+        </div><!-- End Card Item -->
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="card">
+            <img src="{% static 'assets/img/ContinuousLearning.jpg' %}" class="img-fluid" alt="ContinuousLearning">
+            <h3>Continuous Learning</h3>
+            <p>In a rapidly evolving digital world, we stay ahead of the curve by continually updating our knowledge,
+              providing training, and implementing the latest cybersecurity advancements.
+            </p>
+          </div>
+        </div><!-- End Card Item -->
+
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="card">
+            <img src="{% static 'assets/img/values-3.png' %}" class="img-fluid" alt="Customer-Centric Solutions">
+            <h3>Customer-Centric Solutions</h3>
+            <p>Your success is our priority. We are committed to providing personalized, flexible services that align
+              with your goals and challenges.</p>
+          </div>
+        </div><!-- End Card Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Values Section -->
+  <section id="features" class="feature-section ptb-100 gray-light-bg">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <p>Why Choose Vkonsec?</p>
+
+    </div><!-- End Section Title -->
+    <div class="container">
+      <div class="row justify-content-center mb-1">
+        <div class="col-md-12 col-lg-12">
+          <div class="section-heading text-center">
+            <p>Choosing the right partner for your IT and cybersecurity needs is critical in today’s
+              fast-evolving technological landscape. At Vkonsec, we combine expertise, innovation, and a
+              customer-centric
+              approach to deliver exceptional results.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!--feature new style start-->
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-ddara-flat-ddara/54/000000/external-competitor-digital-marketing-ddara-flat-ddara.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Expertise in IT Training</h5>
+                  <p>At Vkonsec, we pride ourselves on the quality and depth of our training programs. Our trainers
+                    bring real-world industry experience to the classroom, complemented by their global certifications
+                    in diverse IT domains. This combination of expertise and practical knowledge ensures our learners
+                    gain insights that are not just theoretical but also highly applicable in the professional world.
+                    Whether you are pursuing certifications like CCNA, CEH, Palo Alto, SIEM, DevOps, CISSP, our trainers
+                    guide you through the nuances of these technologies with precision, preparing you to excel in the
+                    competitive IT landscape.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/54/000000/external-view-based-conversions-big-data-flaticons-lineal-color-flat-icons.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Innovative Solutions</h5>
+                  <p>With our research and development centers in India, we are constantly exploring and adopting the
+                    latest advancements in IT and cybersecurity. Our ability to innovate ensures that our clients
+                    benefit from cutting-edge solutions that address both current and emerging threats.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/54/000000/external-seo-seo-and-development-smashingstocks-outline-color-smashing-stocks.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Commitment to Excellence</h5>
+                  <p>Our unwavering commitment to excellence drives everything we do. Whether you are a student looking
+                    to advance your career or an organization seeking robust IT solutions, Vkonsec is dedicated to
+                    exceeding your expectations.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img width="54" height="54" src="https://img.icons8.com/color/48/solve-problem.png" alt="solve-problem"/>
+                <div class="icon-text">
+                  <h5 class="mb-2">Holistic Problem-Solving</h5>
+                  <p>We take a predictive and comprehensive approach to safeguarding your critical data and assets. By
+                    integrating intelligence across various security disciplines, we ensure that your organization is
+                    not only protected but also resilient against future challenges.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 d-none d-sm-none d-md-block d-lg-block">
+          <div class="position-relative pb-md-5 py-lg-0">
+            <img alt="why chhose us" src="{% static 'assets/img/whychooseus.webp' %}" class="img-center img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/54/000000/external-keyword-online-marketing-wanicon-lineal-color-wanicon.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Focus on Practical Outcomes</h5>
+                  <p>At Vkonsec, we believe in delivering results. Whether it’s through our training programs or
+                    consultancy services, our focus is on providing practical solutions that drive real-world outcomes.
+                    From empowering IT professionals with job-ready skills to implementing security measures that
+                    protect your business, our impact is tangible.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/54/000000/external-content-digital-marketing-flaticons-lineal-color-flat-icons-2.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Comprehensive Cybersecurity Expertise</h5>
+                  <p></p>
+                  <p>Cybersecurity is at the core of what we do. We specialize in delivering end-to-end security
+                    solutions that are tailored to your unique requirements. Whether it's protecting critical
+                    infrastructure, fortifying enterprise systems, or securing national-level projects, our team has the
+                    knowledge, tools, and dedication to deliver.</p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-phatplus-lineal-color-phatplus/54/000000/external-audit-calculator-tools-phatplus-lineal-color-phatplus.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Best-in-Class Consultants</h5>
+                  <p>Our team of consultants is meticulously selected to ensure they represent the best in class across
+                    various cybersecurity disciplines. Each consultant undergoes rigorous training to stay ahead of the
+                    curve in addressing modern security challenges. From designing robust network architectures to
+                    implementing cutting-edge security solutions, our experts are equipped to meet the most complex
+                    organizational needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex align-items-start mb-sm-0 mb-md-5 mb-lg-5">
+                <img
+                  src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/54/000000/external-view-based-conversions-big-data-flaticons-lineal-color-flat-icons.png" />
+                <div class="icon-text">
+                  <h5 class="mb-2">Vendor-Neutral Approach</h5>
+                  <p>As a vendor-neutral organization, our priority is your security—not promoting specific technologies
+                    or brands. This allows us to design solutions that are technology-agnostic, focusing solely on
+                    meeting your organization's objectives without bias or limitations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--feature new style end-->
+    </div>
+  </section>
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about section-bg">
+    <div class="container">
+        <div class="section-title">
+            <p>Our Approach</p>
+          </div>
+        <div class="col-md-12">
+          <div class="content d-flex flex-column justify-content-center ps-0 ps-xl-4">
+            <div class="row gy-4 mt-3">
+              <div class="col-md-4 icon-box" data-aos="fade-up">
+                <i class="bi bi-card-heading"></i>
+                <h4><a href="#">Integrity & Intelligence:</a></h4>
+                <p>We uphold the highest standards of professionalism and intelligence in addressing cybersecurity needs for large organizations, critical infrastructure, and even national-level systems.</p>
+              </div>
+              <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-puzzle"></i>
+                <h4><a href="#">Comprehensive Solutions:</a></h4>
+                <p>Our solution design and implementation services ensure organizations adopt a predictive approach to safeguarding critical data and assets.</p>
+              </div>
+              <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-asterisk"></i>
+                <h4><a href="#">Vendor Neutrality:</a></h4>
+                <p>Our independence from specific vendors allows us to deliver unbiased, optimized security solutions</p>
+              </div>
+            </div>
+          </div><!-- End .content-->
+        
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- Features Section -->
+  <section id="features" class="features section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Our Courses</h2>
+      <p>An immersive learning experience<br></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up">
+
+
+      <ul class="nav nav-tabs row gy-4 d-flex">
+
+        <li class="nav-item col-6 col-md-4 col-lg-4">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+            <i class="bi bi-box-seam" style="color: #6610f2;"></i>
+            <h4>Our Courses</h4>
+          </a>
+        </li><!-- End Tab 1 Nav -->
+
+        <li class="nav-item col-6 col-md-4 col-lg-4">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+            <i class="bi bi-brightness-high" style="color: #20c997;"></i>
+            <h4>Technologies</h4>
+          </a>
+        </li><!-- End Tab 2 Nav -->
+
+        <li class="nav-item col-6 col-md-4 col-lg-4">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+            <i class="bi bi-command" style="color: #df1529;"></i>
+            <h4>Certification </h4>
+          </a>
+        </li><!-- End Tab 3 Nav -->
+
+
+      </ul>
+
+      <div class="tab-content">
+
+        <div class="tab-pane fade active show" id="features-tab-1">
+
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h3>Partner</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua.
+            </p>
+          </div>
+          <div class="container">
+
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="row">
+                  <div class="col-lg-3 col-md-4 mt-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="">
+                      <div class="card">
+                        <img src="{% static 'assets/img/values-1.png' %}" class="img-fluid" alt="">
+                        <h5> <b>Network+ (N+)</b> </h5>
+
+                      </div>
+                    </a>
+
+                  </div>
+                  <div class="col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mb-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card">
+                      <img src="{% static 'assets/img/values-1.png' %}" class="img-fluid" alt="">
+                      <h5> <b>SOC Course</b> </h5>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mb-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card">
+                      <img src="{% static 'assets/img/values-1.png' %}" class="img-fluid" alt="">
+                      <h5> <b>DevOps</b> </h5>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mb-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card">
+                      <img src="{% static 'assets/img/firewall.jpg' %}" class="img-fluid" alt="">
+                      <h5> <b>Checkpoint Course</b> </h5>
+
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mb-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card">
+                      <img src="{% static 'assets/img/values-1.png' %}" class="img-fluid" alt="">
+                      <h5> <b>Certified Ethical Hacker</b> </h5>
+
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-4 d-flex align-items-stretch mt-4 mb-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card">
+                      <img src="{% static 'assets/img/values-1.png' %}" class="img-fluid" alt="">
+                      <h5> <b>Palo Alto Networks</b> </h5>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+              </div><!-- End Card Item -->
+              <div class="col-sm-4 text-center featurimg" data-aos="fade-up" data-aos-delay="200">
+                <img src="{% static 'assets/img/teaching.jpg' %}" alt="" class="img-fluid">
+              </div>
+
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+        </div><!-- End Tab Content 1 -->
+
+        <div class="tab-pane fade" id="features-tab-2">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="text-center">Coming Soon</h1>
+          </div>
+        </div><!-- End Tab Content 2 -->
+
+        <div class="tab-pane fade" id="features-tab-3">
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="text-center">Coming Soon</h1>
+          </div>
+
+        </div><!-- End Tab Content 3 -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Features Section -->
+
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Pricing</h2>
+      <p>Check Our Affordable Pricing<br></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="pricing-tem">
+            <h3 style="color: #20c997;">Free Plan</h3>
+            <div class="price"><sup>$</sup>0<span> / mo</span></div>
+            <div class="icon">
+              <i class="bi bi-box" style="color: #20c997;"></i>
+            </div>
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li class="na">Pharetra massa</li>
+              <li class="na">Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy"> Contact Us</a>
+          </div>
+        </div><!-- End Pricing Item -->
+
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="pricing-tem">
+            <span class="featured">Featured</span>
+            <h3 style="color: #0dcaf0;">Starter Plan</h3>
+            <div class="price"><sup>$</sup>19<span> / mo</span></div>
+            <div class="icon">
+              <i class="bi bi-send" style="color: #0dcaf0;"></i>
+            </div>
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li class="na">Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy"> Contact Us</a>
+          </div>
+        </div><!-- End Pricing Item -->
+
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="pricing-tem">
+            <h3 style="color: #fd7e14;">Business Plan</h3>
+            <div class="price"><sup>$</sup>29<span> / mo</span></div>
+            <div class="icon">
+              <i class="bi bi-airplane" style="color: #fd7e14;"></i>
+            </div>
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li>Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy"> Contact Us</a>
+          </div>
+        </div><!-- End Pricing Item -->
+
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+          <div class="pricing-tem">
+            <h3 style="color: #0d6efd;">Ultimate Plan</h3>
+            <div class="price"><sup>$</sup>49<span> / mo</span></div>
+            <div class="icon">
+              <i class="bi bi-rocket" style="color: #0d6efd;"></i>
+            </div>
+            <ul>
+              <li>Aida dere</li>
+              <li>Nec feugiat nisl</li>
+              <li>Nulla at volutpat dola</li>
+              <li>Pharetra massa</li>
+              <li>Massa ultricies mi</li>
+            </ul>
+            <a href="#" class="btn-buy"> Contact Us</a>
+          </div>
+        </div><!-- End Pricing Item -->
+
+      </div><!-- End pricing row -->
+
+    </div>
+
+  </section><!-- /Pricing Section -->
+
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <p>What they are saying about us<br></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              </p>
+              <div class="profile mt-auto">
+                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              </p>
+              <div class="profile mt-auto">
+                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
+                tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+              </p>
+              <div class="profile mt-auto">
+                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
+                minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+              </p>
+              <div class="profile mt-auto">
+                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+                labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+              </p>
+              <div class="profile mt-auto">
+                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6 contactform">
+          <div class="col-12 ">
+            <div class="contactdiv text-center">
+              <h2 class="text-uppercase fw-bold">Contact Us</h2>
+              <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+            </div>
+            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data" class="php-email-form"
+              data-aos="fade-up" data-aos-delay="200">
+              {% csrf_token %}
+              {% if messages %}
+              {% for message in messages %}
+
+              <div class="alert alert-success" role="alert">
+                {{message}}
+              </div>
+
+              {% endfor %}
+              {% endif %}
+              <div class="row gy-4">
+
+                <div class="col-12">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+
+                <div class="col-12 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+                <div class="col-12 ">
+                  <input type="tel" class="form-control" name="phone" placeholder="9876543210" pattern="[0-9]{10}"
+                    required="">
+                </div>
+                <div class="col-12">
+                  <select class="form-select " name="Course" id="inputGroupSelect02">
+                    <option selected>Courses</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="CCNA">CCNA</option>
+                    <option value="Checkpoint">Checkpoint</option>
+                    <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                    <option value="SOC">SOC</option>
+                    <option value="Network">Network</option>
+                    <option value="PCNSA">PCNSA</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" name="message" rows="3" placeholder="Message" required=""></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+
+                  <button type="submit">Send Message</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div><!-- End Contact Form -->
+
+        <div class="col-lg-6 contactpic">
+
+          <img class="img-fluid" src="{% static 'assets/img/contact.svg' %}" alt="whatsappbg" srcset="">
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </section><!-- /Contact Section -->
+
+</main>
+{% endblock %}

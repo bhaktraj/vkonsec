@@ -1,0 +1,199 @@
+{% extends 'coursebasic.html' %}
+{% block title %}Checkpoint{% endblock %}
+{% block body %}
+{% load static %}
+
+
+<main class="main mt-5">
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Checkpoint</h1>
+                        <p class="mb-0">DevOps is a methodology that combines people, processes, and technology to
+                            improve the software development and IT operations life cycle. The term is a combination of
+                            the words "development" and "operations".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="service-box">
+                        <h4>Course List</h4>
+                        <div class="services-list">
+                            <a href="/ccna/"><i class="bi bi-arrow-right-circle"></i><span>CCNA</span></a>
+                            <a href="/network/"><i class="bi bi-arrow-right-circle"></i><span>Network+ (N+)</span></a>
+                            <a href="/soc/"><i class="bi bi-arrow-right-circle"></i><span>SOC Course</span></a>
+                            <a href="/devops/"><i class="bi bi-arrow-right-circle"></i><span>DevOps</span></a>
+                            <a href="/checkpoint/"><i class="bi bi-arrow-right-circle"></i><span>Checkpoint
+                                    Course</span></a>
+                            <a href="/ceh/"><i class="bi bi-arrow-right-circle"></i><span>Certified Ethical
+                                    Hacker</span></a>
+                            <a href="/pcnsa/"><i class="bi bi-arrow-right-circle"></i><span>Palo Alto Networks</span></a>
+                        </div>
+                    </div><!-- End course List -->
+
+                    <div class="service-box">
+                        <h4>Download Syllabus</h4>
+                        <div class="download-catalog">
+                            <a href="{% static 'syllabus/3777.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+                        </div>
+                    </div><!-- End course List -->
+                    <div id="contact" class="service-box">
+                        <div class="col-12 ">
+                            <div class="contactdiv text-center">
+                                <h2 class="text-uppercase fw-bold">Contact Us</h2>
+                                <p>Or reach out manually to <a href="mailto:abc@gmail.com">abc@gmail.com</a></p>
+
+                            </div>
+                            <form method="post" action="{% url 'contact' %}" enctype="multipart/form-data"
+                                class="php-email-form">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+
+                                <div class="alert alert-success" role="alert">
+                                    {{message}}
+                                </div>
+
+                                {% endfor %}
+                                {% endif %}
+                                <div class="row gy-4">
+
+                                    <div class="col-12">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                            required="">
+                                    </div>
+
+                                    <div class="col-12 ">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                            required="">
+                                    </div>
+                                    <div class="col-12 ">
+                                        <input type="tel" class="form-control" name="phone" placeholder="9876543210"
+                                            pattern="[0-9]{10}" required="">
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select " name="Course" id="inputGroupSelect02">
+                                            <option selected>Courses</option>
+                                            <option value="DevOps">DevOps</option>
+                                            <option value="CCNA">CCNA</option>
+                                            <option value="Checkpoint">Checkpoint</option>
+                                            <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
+                                            <option value="SOC">SOC</option>
+                                            <option value="Network">Network</option>
+                                            <option value="PCNSA">PCNSA</option>
+                                          </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" name="message" rows="3" placeholder="Message"
+                                            required=""></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+
+                                        <button type="submit">Send Message</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div><!-- End Contact Form -->
+
+                    <div class="help-box d-flex flex-column justify-content-center align-items-center">
+                        <i class="bi bi-headset help-icon"></i>
+                        <h4>Have a Question?</h4>
+                        <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+1
+                                5589 55488 55</span></p>
+                        <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a
+                                href="mailto:contact@example.com">contact@example.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8 ps-lg-5" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <img src="{% static 'assets/img/course/checkpoint.png' %}" alt="" class="img-fluid services-img">
+                    <h1>Benefits of Doing a Checkpoint Course (e.g., CCSA - Checkpoint Certified Security Administrator):</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Enhanced Cybersecurity Skills:</span>
+                        </li>
+                        <p>Provides expertise in configuring, managing, and troubleshooting Checkpoint security gateways and devices.</p>
+                        <p>Increases knowledge of firewalls, VPNs, threat prevention, and network security best practices.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Career Advancement:</span>
+                        </li>
+                        <p>Recognized certification in the cybersecurity industry, 
+                            opening up opportunities for roles like Network Security Engineer, Security Administrator, and IT Security Analyst.</p>
+                        <p>Boosts your professional profile in organizations using Checkpoint products.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Hands-on Experience:</span></li>
+                        <p>Practical lab training on real-world scenarios enhances your ability to implement security policies, 
+                            configure VPNs, and manage user authentication in live environments.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Vendor-Specific Knowledge:</span></li>
+                        <p>Specializes in Checkpoint technologies, which are widely used in enterprises for their robust security solutions.</p>
+                        <p>Enables you to handle enterprise-level network security challenges efficiently.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Competitive Salary:</span></li>
+                        <p>Certified professionals are in demand, often earning competitive 
+                            salaries due to their specialized skills in securing networks and mitigating threats using Checkpoint technologies.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Strong Foundation in Network Security:</span></li>
+                        <p>Provides a solid grounding in security principles, 
+                            including firewall rule configuration, network address translation (NAT), and intrusion prevention.</p>
+                        <li><i class="bi bi-check-circle"></i> <span>Industry-Recognized Credential:</span></li>
+                        <p>Being CCSA or CCSE certified establishes you as a qualified professional, giving you an edge over non-certified candidates.</p>
+                    </ul>
+                    <h1>Prerequisites for a Checkpoint Course (CCSA)</h1>
+                    <ul>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Basic Networking Knowledge:</span></li>
+                        <p>
+                            Familiarity with networking fundamentals such as TCP/IP, subnetting, routing, and switching is essential.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Experience with Windows and Linux:</span></li>
+                        <p>
+                            Basic understanding of Windows and Linux operating systems, which are often used in network environments.
+                        </p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Knowledge of Network Security:</span></li>
+                        <p>Fundamental understanding of security concepts like firewalls, intrusion detection/prevention systems (IDS/IPS), and
+                             VPNs.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Experience with CLI Tools:</span></li>
+                        <p>Some experience with command-line interface (CLI) tools, especially for troubleshooting and configuring network devices..</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Experience in IT:</span></li>
+                        <p>It is recommended to have 6 months to 1 year of work experience in an IT or networking environment.</p>
+                        <li><i class="bi bi-check-circle"></i> <span class="fw-bold">Desirable but Not Mandatory:</span></li>
+                        <p>Previous experience with Checkpoint solutions or equivalent firewall technologies can be beneficial but is not mandatory.</p>
+                    </ul>
+                    <p>Completing a Checkpoint course positions you for success in cybersecurity roles by building foundational and advanced skills needed for managing security environments in medium-to-large enterprises.</p>
+                    <p>Here’s a detailed daily breakdown for teaching a <span class="fw-bold">Checkpoint CCSA R81 course</span> Checkpoint CCSA R81 course, including the subtopics and approximate time allocation for each section:</p>
+                    <h1>
+                        CCSA - Checkpoint Certified Security Administrator Course Syllabus with Time Breakdown in Hours
+                    </h1>
+                    <div class="downloadbox">
+                        <a href="{% static 'syllabus/3777.pdf' %}" download><i class="bi bi-filetype-pdf"></i><span>Syllabus PDF</span></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /Service Details Section -->
+
+</main>
+
+
+
+{% endblock %}
