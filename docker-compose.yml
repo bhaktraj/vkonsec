@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vkonsec
+      MYSQL_USER: ankit
+      MYSQL_PASSWORD: Rifarani
+    ports:
+      - "3306:3306"
+    networks:
+      - connection
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uankit", "-pRifarani"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+  djangoapp:
+    build: .
+    container_name: djangoapp
+    working_dir: /app
+    command: ["bash", "-c",'python manage.py migrate && python manage.py runserver 0.0.0.0:8000']
+
+    ports:
+      - "8000:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - connection
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+networks:
+  connection:
