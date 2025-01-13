@@ -10,6 +10,8 @@ services:
       MYSQL_PASSWORD: Rifarani
     ports:
       - "3306:3306"
+    volumes:
+      - mysql:/var/lib/mysql
     networks:
       - connection
     healthcheck:
@@ -38,6 +40,18 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-
+  nginx:
+    build:
+      context: ./nginx
+    networks:
+      - connection
+    ports:
+      - "80:80"
+    depends_on:
+      - djangoapp
+    restart: always
 networks:
   connection:
+volumes:
+  mysql:
+
