@@ -8,4 +8,5 @@ COPY requirements.txt ./
 RUN pip3 install mysqlclient
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
-RUN python manage.py makemigrations
+EXPOSE 8000
+CMD python manage.py runserver

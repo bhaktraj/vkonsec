@@ -6,10 +6,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: vkonsec
-      MYSQL_USER: ankit
-      MYSQL_PASSWORD: Rifarani
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     ports:
       - "3306:3306"
+    volumes:
+      - mysql:/var/lib/mysql
     networks:
       - connection
     healthcheck:
@@ -38,6 +40,17 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
-
+  nginx:
+    build:
+      context: ./nginx
+    networks:
+      - connection
+    ports:
+      - "80:80"
+    depends_on:
+      - djangoapp
+    restart: always
 networks:
   connection:
+volumes:
+  mysql:

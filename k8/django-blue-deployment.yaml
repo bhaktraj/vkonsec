@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: djangoapp-blue
+  namespace: webapps
+spec:
+  selector:
+    matchLabels:
+      app: djangoapp
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: djangoapp
+        version: blue
+    spec:
+      containers:
+        - name: djangoapp
+          image: bhaktraj/vkonsec:buildid
+          workingDir: /app
+          command: ["/bin/bash", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 5
