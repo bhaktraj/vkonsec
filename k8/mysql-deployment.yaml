@@ -33,7 +33,7 @@ spec:
               name: mysql-storage
           readinessProbe:
             exec:
-              command: ["mysqladmin", "ping", "-h", "localhost", "-uankit", "-pRifarani"]
+              command: ["mysqladmin", "ping", "-h", "localhost", "-uankit", "-proot"]
             initialDelaySeconds: 60
             periodSeconds: 10
             timeoutSeconds: 5
