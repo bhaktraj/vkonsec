@@ -9,4 +9,3 @@ spec:
     version: blue  # Change to "green" when switching
   ports:
     - port: 8000
-      targetPort: 8000
