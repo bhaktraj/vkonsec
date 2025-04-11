@@ -5,7 +5,7 @@ RUN apt-get update \
     && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
-    apt-get install -y netcat gcc libpq-dev && \
+    apt-get install -y netcat-openbsd gcc libpq-dev && \
     apt-get clean
 COPY requirements.txt ./
 RUN pip3 install mysqlclient
