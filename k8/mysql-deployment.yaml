@@ -23,7 +23,7 @@ spec:
             - name: MYSQL_DATABASE
               value: "vkonsec"
             - name: MYSQL_USER
-              value: "root"
+              value: "ankit"
             - name: MYSQL_PASSWORD
               value: "root"
           ports:

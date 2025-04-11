@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'vkonsec',
         'HOST': 'mysql',
         'PORT': '3306',
-        'USER': 'root',
+        'USER': 'ankit',
         'PASSWORD': 'root',
 
     }

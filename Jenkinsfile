@@ -3,7 +3,9 @@ def COLOR_MAP = [
     'FAILURE': 'danger',
 ]
 pipeline {
+
     agent any
+
 
     parameters {
         choice(name: 'DEPLOY_ENV', choices: ['blue', 'green'], description: 'Choose which environment to deploy: Blue or Green')
@@ -19,7 +21,7 @@ pipeline {
 
         stage('Fetch the code'){
             steps{
-                git url: 'https://github.com/bhaktraj/vkonsec.git', branch: 'docker'
+                git url: 'https://github.com/bhaktraj/vkonsec.git', branch: 'kubernetes'
 
             }    
         }
@@ -82,7 +84,7 @@ pipeline {
         stage('Persistent Volume Claim for MySQL') {
             steps {
                 script {
-                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46743932FDE6B34C74566F392E30CABA.gr7.ap-south-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'kubecred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://3CA6E485D43C0E5E4EB7B7108ECACEA2.gr7.us-east-1.eks.amazonaws.com') {
                         sh """ if ! kubectl get pvc mysql-pvc -n webapps; then
                                 kubectl apply -f k8/mysql-pvc.yaml -n webapps
                             fi
@@ -94,7 +96,7 @@ pipeline {
         stage('Deploying MySQL') {
             steps {
                 script {
-                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46743932FDE6B34C74566F392E30CABA.gr7.ap-south-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'kubecred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://3CA6E485D43C0E5E4EB7B7108ECACEA2.gr7.us-east-1.eks.amazonaws.com') {
                         sh """ 
                         kubectl apply -f k8/mysql-deployment.yaml -n webapps
                         kubectl apply -f k8/mysql-service.yaml -n webapps
@@ -106,9 +108,9 @@ pipeline {
 
         stage('Update K8s Manifest') {
             steps {
-                sh " sed 's/buildid/$BUILD_NUMBER/g' k8/django-blue-deployment.yaml "
-                sh " sed 's/buildid/$BUILD_NUMBER/g' k8/django-green-deployment.yaml "
-                sh " sed 's/buildid/$BUILD_NUMBER/g' k8/nginx-deployment.yaml "
+                sh " sed -i 's/buildid/$BUILD_NUMBER/g' k8/django-blue-deployment.yaml "
+                sh " sed -i 's/buildid/$BUILD_NUMBER/g' k8/django-green-deployment.yaml "
+                sh " sed -i 's/buildid/$BUILD_NUMBER/g' k8/nginx-deployment.yaml "
             }
         }
 
@@ -117,27 +119,15 @@ pipeline {
                 script {
                     def deploymentFile = ""
                     if (params.DEPLOY_ENV == 'blue') {
-                        deploymentFile = 'django-blue-deployment.yaml'
+                        deploymentFile = 'k8/django-blue-deployment.yaml'
                     } else {
-                        deploymentFile = 'django-green-deployment.yaml'
+                        deploymentFile = 'k8/django-green-deployment.yaml'
                     }
 
-                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46743932FDE6B34C74566F392E30CABA.gr7.ap-south-1.eks.amazonaws.com') 
+                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'kubecred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://3CA6E485D43C0E5E4EB7B7108ECACEA2.gr7.us-east-1.eks.amazonaws.com') 
                     {
                         sh "kubectl apply -f ${deploymentFile} -n webapps"
-                    }
-                }
-            }
-        }
-
-        stage('Deploy Nginx') {
-            steps {
-                script {
-                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46743932FDE6B34C74566F392E30CABA.gr7.ap-south-1.eks.amazonaws.com') {
-                        sh """ 
-                        kubectl apply -f k8/nginx-deployment.yaml -n webapps
-                        kubectl apply -f k8/nginx-service.yaml -n webapps
-                        """  
+                        sh "kubectl apply -f k8/django-service.yaml -n webapps"
                     }
                 }
             }
@@ -152,12 +142,24 @@ pipeline {
                     def newEnv = params.DEPLOY_ENV
 
                     // Always switch traffic based on DEPLOY_ENV
-                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46743932FDE6B34C74566F392E30CABA.gr7.ap-south-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'kubecred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://3CA6E485D43C0E5E4EB7B7108ECACEA2.gr7.us-east-1.eks.amazonaws.com') {
                         sh '''
-                            kubectl patch service djangoapp -p "{\\"spec\\": {\\"selector\\": {\\"app\\": \\"bankapp\\", \\"version\\": \\"''' + newEnv + '''\\"}}}" -n webapps
+                            kubectl patch service djangoapp -p "{\\"spec\\": {\\"selector\\": {\\"app\\": \\"djangoapp\\", \\"version\\": \\"''' + newEnv + '''\\"}}}" -n webapps
                         '''
                     }
                     echo "Traffic has been switched to the ${newEnv} environment."
+                }
+            }
+        }
+        stage('Deploy Nginx') {
+            steps {
+                script {
+                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'kubecred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://3CA6E485D43C0E5E4EB7B7108ECACEA2.gr7.us-east-1.eks.amazonaws.com') {
+                        sh """ 
+                        kubectl apply -f k8/nginx-deployment.yaml -n webapps
+                        kubectl apply -f k8/nginx-service.yaml -n webapps
+                        """  
+                    }
                 }
             }
         }
@@ -166,10 +168,10 @@ pipeline {
             steps {
                 script {
                     def verifyEnv = params.DEPLOY_ENV
-                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'k8-token', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://46743932FDE6B34C74566F392E30CABA.gr7.ap-south-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'blue-green-deployment', contextName: '', credentialsId: 'kubecred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://3CA6E485D43C0E5E4EB7B7108ECACEA2.gr7.us-east-1.eks.amazonaws.com') {
                         sh """
                         kubectl get pods -l version=${verifyEnv} -n webapps
-                        kubectl get svc djangoapp -n webapps
+                        kubectl get svc nginx -n webapps
                         """
                     }
                 }
@@ -185,6 +187,12 @@ pipeline {
             slackSend channel: '#jenkins',
                 color:  COLOR_MAP[currentBuild.currentResult],
                 message:"*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n more info at : ${env.BUILD_URL}"
+            slackUploadFile channel: '#jenkins',
+                filePath: '/var/lib/jenkins/workspace/pipeline/trivy.txt',
+                initialComment: "🛡️ Trivy image scan report for build #${env.BUILD_NUMBER}"
+            slackUploadFile channel: '#jenkins',
+                filePath: '/var/lib/jenkins/workspace/pipeline/trivyfs.txt',
+                initialComment: "🛡️ Trivy file scan report for build #${env.BUILD_NUMBER}"
         }
     }
 }
